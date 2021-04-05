@@ -23,6 +23,9 @@ Matrix::Matrix(int s, int sc, int rc){
 	signal=s;
 	shiftClock=sc;
 	registerClock=rc;
+	pinMode(s,OUTPUT);
+	pinMode(sc,OUTPUT);
+	pinMode(rc,OUTPUT);
 }
 void Matrix::parameters(int t1, int n1){
 	t=t1;
