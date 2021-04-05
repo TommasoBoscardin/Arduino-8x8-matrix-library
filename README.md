@@ -30,31 +30,31 @@ View example-matrix.ino for all functions.
 
 ## Documentation
 
--   To create a new matrix:
+####   To create a new matrix:
 ```c++
 Matrix MyMatrix(signal_pin, shiftClock_pin, registerClock_pin);
 ```
   * signal_pin,shiftClock_pin,registerClock_pin are int numbers;
   * signal pin, shiftClock pin and registerClock pin must be all digital output pins.
--   To set parameters:
+####   To set parameters:
 ```c++
 MyMatrix.parameters(frequency, number_of_frame);
 ```
    * frequency is the int number of images per second
    * number_of_frame is the int number of frames
--   To set the matrix's pattern:
+####   To set the matrix's pattern:
 ```c++
 MyMatrix.image(Array_pattern);
 ```
    * Array_pattern is the array of byte that contains the matrix's pattern.
    * Each row of the image is represent by a byte. Each led is represent by a bit (0 for off state and 1 for on state)
--    To print the matrix's pattern:
+####    To print the matrix's pattern:
 ```c++
 MyMatrix.printMat();
 ```
    * It prints the pattern that was insert with .image() method
    * If your display is a rowanod type (e.g. 1588BS) the method has no arguments, if the display is a rowcathod type you have to insert "1", for example `MyMatrix.printMat(1);`
-- To rotate the pattern:
+#### To rotate the pattern:
 ```c++
 MyMatrix.rotate(sine_angle, cosine_angle);
 ```
@@ -62,13 +62,13 @@ MyMatrix.rotate(sine_angle, cosine_angle);
    * The argoments are floats
    * Sine_angle is the sine of the angle of the counterclockwise rotation
    * Cosine_angle is the cosine of the angle of the counterclockwise rotation
-- To print a number:
+#### To print a number:
 ```c++
 MyMatrix.printNum(number_to_print, frames);
 ```
    * number_to_print is the two-digit integrer that will be shown
    * frames is the integrer of frames to print
-- To print a message/string:
+#### To print a message/string:
 ```c++
 MyMatrix.printMessage(message_to_print, frames);
 ```
