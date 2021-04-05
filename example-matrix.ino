@@ -1,9 +1,6 @@
 #include <Matrix.h>
 
 void setup() {
-  pinMode(2,OUTPUT);
-  pinMode(3,OUTPUT);
-  pinMode(4,OUTPUT);
 }
 byte Array1[8]={255,129,129,129,129,129,129,255};
 byte Array2[8]={0,0,60,36,36,60,0,0};
