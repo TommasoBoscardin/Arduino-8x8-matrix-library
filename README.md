@@ -47,12 +47,13 @@ MyMatrix.parameters(frequency, number_of_frame);
 MyMatrix.image(Array_pattern);
 ```
    - Array_pattern is the array of byte that contains the matrix's pattern.
-   -   To print the matrix's pattern:
+   - Each row of the image is represent by a byte. Each led is represent by a bit (0 for off state and 1 for on state)
+-    To print the matrix's pattern:
 ```c++
 MyMatrix.printMat();
 ```
-   - This method has no arguments
    - It prints the pattern that was insert with .image() method
+   - If your display is a rowanod type (e.g. 1588BS) the method has no arguments, if the display is a rowcathod type you have to insert "1", for example `MyMatrix.printMat(1);`
 - To rotate the pattern:
 ```c++
 MyMatrix.rotate(sine_angle, cosine_angle);
