@@ -6,14 +6,15 @@ class Matrix{
 	byte A[8];
 	int t;
 	int n;
+	bool p=0;
 	int signal;//2
 	int shiftClock;//3
 	int registerClock;//4
 	public:
 	Matrix(int s, int sc, int rc); //s signal, sc shiftClock, rc registerClock
-	void parameters(int t1, int n1); //t frequenza, n numero di fotogrammi
+	void parameters(int t1, int n1, bool p1=0); //t frequenza, n numero di fotogrammi, p: 0=rowanod 1=rowcathod
 	void image(byte A1[]);//A array di 8 byte
-	void printMat(bool p=0);
+	void printMat();
 	void printNum(int n, int k); //n intero di 2 cifre, k numero di fotogrammi
 	void rotation(float s, float c); //s e c parametri reali(seno,coseno,...)
 	void printMessage(String messaggio, byte s);//stampa il messaggio, s è il numero di fotogrammi per passo (5-10)
@@ -27,16 +28,17 @@ Matrix::Matrix(int s, int sc, int rc){
 	pinMode(sc,OUTPUT);
 	pinMode(rc,OUTPUT);
 }
-void Matrix::parameters(int t1, int n1){
+void Matrix::parameters(int t1, int n1, bool p1=0){
 	t=t1;
 	n=n1;
+	p=p1;
 }
 void Matrix::image(byte A1[]){
 	for(int i=0;i<8;i++){
 		A[i]=A1[i];
 	}
 }
-void Matrix::printMat(bool p=0){ //p: 0=rowanod 1=rowcatod
+void Matrix::printMat(){
     //6 -5 8 -3 -2 7 5 3 -8 -7 2 -1 4 -6 -4 1
   byte r[16] = {22,8,24,32,64,23,21,19,1,2,18,128,20,4,16,17};
   int k=n;
