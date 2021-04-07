@@ -60,9 +60,9 @@ MyMatrix.printMat();
 MyMatrix.rotate(sine_angle, cosine_angle);
 ```
    * This method rotate the pattern
-   * The argoments are floats
+   * The arguments are floats
    * `sine_angle` is the sine of the angle of the counterclockwise rotation
-   * `cosine_angl`e is the cosine of the angle of the counterclockwise rotation
+   * `cosine_angle` is the cosine of the angle of the counterclockwise rotation
 #### To print a number:
 ```c++
 MyMatrix.printNum(number_to_print, frames);
